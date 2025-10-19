@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Radiel Lightpierce - Ysandore</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'MedievalSharp', serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
 
+    nav {
+      background-color: #1a1a1a;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffd700;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      max-width: 200px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header class="banner"></header>
+
+  <nav>
+    <a href="index.html">🏠 Ysandore</a>
+    <a href="Taverne.html">📜 Taverne</a>
+    <a href="Aventurier.html">🖼 Aventurier</a>
+    <a href="Personnage d'histoire.html">🧙 Personnage d'histoire</a>
+    <a href="contact.html">📩 Contact</a>
+  </nav>
+
+  <section>
+    <p class="breadcrumb">
+      <a href="Aventurier.html">Aventurier</a> > <strong>Radiel Lightpierce</strong>
+    </p>
+
+    <h2>Radiel Lightpierce</h2>
+
+    <div class="gallery">
+      <!-- Images normales -->
+      <img src="images/Radiel_Fiches_01_Temp.jpg" alt="Image 1" onclick="openLightbox(this.src)">
+      <img src="images/Radiel_Fiches_02_Temp.jpg" alt="Image 2" onclick="openLightbox(this.src)">
+
+      <!-- Image secrète -->
+      <img src="images/Radiel_Fiches_03_Temp.jpg" alt="Image 3" onclick="openLightboxAndRedirect(this.src, 'bonus-image.html')">
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Ysandore JDR</footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Zoom">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function openLightboxAndRedirect(src, url) {
+      openLightbox(src); // zoom
+      window.open(url, '_blank'); // page bonus
+    }
+  </script>
+</body>
+</html>
