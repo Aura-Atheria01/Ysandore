@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Skarner - Ysandore</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="banner"></header>
+
+<nav>
+  <a href="index.html">🏠 Ysandore</a>
+  <a href="Taverne.html">📜 Taverne</a>
+  <a href="Aventurier.html">🖼 Aventurier</a>
+  <a href="Personnage d'histoire.html">🧙 Personnage d'histoire</a>
+  <a href="contact.html">📩 Contact</a>
+</nav>
+  
+<section>
+  <!-- FIL D’ARIANE -->
+  <p class="breadcrumb">
+    <a href="Aventurier.html">Aventurier</a> > <strong>Skarner</strong>
+  </p>
+
+  <h2>Skarner</h2>
+  <!-- IMAGES DU PERSONNAGE -->
+  <div class="gallery">
+    <img src="images/Skarner_Fiche_page_01.jpg" alt="Image 1 du personnage" onclick="openLightbox(this.src)">
+    <img src="images/Skarner_Fiche_page_02.jpg" alt="Image 2 du personnage" onclick="openLightbox(this.src)">
+    <img src="images/Skarner_Fiche_page_03.jpg" alt="Image 3 du personnage" onclick="openLightbox(this.src)">
+  </div>
+</section>
+<footer>&copy; 2025 Ysandore JDR</footer>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Zoom">
+</div>
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+</body>
+
+</html>
+
+
